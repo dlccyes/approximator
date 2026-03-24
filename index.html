@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Approximator Project Dashboard</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #05070f;
+        --bg-elevated: #101425;
+        --card-bg: rgba(16, 20, 37, 0.78);
+        --text-primary: #f3f5ff;
+        --text-secondary: #b9c1e5;
+        --border: rgba(142, 157, 255, 0.28);
+        --brand: #8da2ff;
+        --brand-strong: #647cff;
+        --success: #41d8a8;
+        --shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text-primary);
+        background:
+          radial-gradient(circle at 10% 10%, rgba(100, 124, 255, 0.2), transparent 38%),
+          radial-gradient(circle at 90% 0%, rgba(65, 216, 168, 0.14), transparent 32%),
+          var(--bg);
+      }
+
+      .layout {
+        width: min(1120px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 3.5rem 0 4rem;
+      }
+
+      .hero {
+        display: grid;
+        gap: 0.85rem;
+        margin-bottom: 2.2rem;
+      }
+
+      .pill {
+        width: fit-content;
+        padding: 0.4rem 0.78rem;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: #dce3ff;
+        background: rgba(141, 162, 255, 0.18);
+        border: 1px solid rgba(141, 162, 255, 0.36);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        line-height: 1.18;
+      }
+
+      .subtitle {
+        margin: 0;
+        max-width: 70ch;
+        color: var(--text-secondary);
+        line-height: 1.65;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        display: grid;
+        gap: 1rem;
+        padding: 1.2rem;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        background:
+          linear-gradient(165deg, rgba(141, 162, 255, 0.16), rgba(16, 20, 37, 0.4) 55%),
+          var(--card-bg);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(7px);
+      }
+
+      .title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .badge {
+        font-size: 0.74rem;
+        color: #d8fff2;
+        background: rgba(65, 216, 168, 0.2);
+        border: 1px solid rgba(65, 216, 168, 0.4);
+        border-radius: 999px;
+        padding: 0.22rem 0.62rem;
+        white-space: nowrap;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--text-secondary);
+        line-height: 1.55;
+      }
+
+      .actions {
+        margin-top: 0.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        padding: 0.58rem 0.86rem;
+        border-radius: 10px;
+        background: linear-gradient(110deg, var(--brand), var(--brand-strong));
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        transition: transform 0.16s ease, filter 0.16s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.07);
+      }
+
+      .url {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+        font-size: 0.78rem;
+        color: #cfd7ff;
+        word-break: break-word;
+      }
+
+      footer {
+        margin-top: 2rem;
+        color: #8f99c5;
+        font-size: 0.85rem;
+      }
+
+      footer a {
+        color: #b9c5ff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(185, 197, 255, 0.5);
+      }
+
+      footer a:hover {
+        color: #dce3ff;
+      }
+
+      @media (max-width: 560px) {
+        .layout {
+          width: min(1120px, calc(100% - 1.2rem));
+          padding-top: 2.2rem;
+        }
+
+        .card {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero">
+        <div class="pill">Approximator Dashboard</div>
+        <h1>Project Dashboard</h1>
+        <p class="subtitle">
+          A quick launchpad to your calculators and visualizers. Open any project below to
+          jump directly into its core workflow.
+        </p>
+      </section>
+
+      <section class="grid" aria-label="Project links">
+        <article class="card">
+          <div class="title-row">
+            <h2>Net Worth & FIRE Calculator</h2>
+            <span class="badge">Finance</span>
+          </div>
+          <p>
+            Your personal financial calculator for net worth planning and estimating your
+            Financial Independence timeline.
+          </p>
+          <div class="actions">
+            <a class="button" href="https://nw.approximator.net" target="_blank" rel="noreferrer"
+              >Open Project</a
+            >
+          </div>
+          <div class="url">https://nw.approximator.net</div>
+        </article>
+
+        <article class="card">
+          <div class="title-row">
+            <h2>US State Tax Comparator</h2>
+            <span class="badge">Tax</span>
+          </div>
+          <p>
+            Compare effective tax outcomes across US states for different income levels and
+            planning scenarios.
+          </p>
+          <div class="actions">
+            <a
+              class="button"
+              href="https://nw.approximator.net/us-tax"
+              target="_blank"
+              rel="noreferrer"
+              >Open Project</a
+            >
+          </div>
+          <div class="url">https://nw.approximator.net/us-tax</div>
+        </article>
+
+        <article class="card">
+          <div class="title-row">
+            <h2>Ski Track Heatmap</h2>
+            <span class="badge">Sports</span>
+          </div>
+          <p>
+            Plot and explore ski season activity with a map-based heatmap to understand where
+            and how often you ride.
+          </p>
+          <div class="actions">
+            <a
+              class="button"
+              href="https://ski-heatmap.approximator.net/"
+              target="_blank"
+              rel="noreferrer"
+              >Open Project</a
+            >
+          </div>
+          <div class="url">https://ski-heatmap.approximator.net/</div>
+        </article>
+
+        <article class="card">
+          <div class="title-row">
+            <h2>Levels.fyi Visualizer</h2>
+            <span class="badge">Career</span>
+          </div>
+          <p>
+            A simple but powerful interface for levels.fyi with detailed statistics,
+            visualizations, and comparisons by company and location.
+          </p>
+          <div class="actions">
+            <a
+              class="button"
+              href="https://levelsfyi-visualizer.approximator.net/"
+              target="_blank"
+              rel="noreferrer"
+              >Open Project</a
+            >
+          </div>
+          <div class="url">https://levelsfyi-visualizer.approximator.net/</div>
+        </article>
+      </section>
+
+      <footer>
+        Author:
+        <a href="https://github.com/dlccyes" target="_blank" rel="noreferrer">dlccyes</a>
+      </footer>
+    </main>
+  </body>
+</html>

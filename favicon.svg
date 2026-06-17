@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1f3a"/>
+      <stop offset="100%" stop-color="#05070f"/>
+    </linearGradient>
+    <linearGradient id="sym" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8da2ff"/>
+      <stop offset="100%" stop-color="#41d8a8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Subtle border -->
+  <rect width="64" height="64" rx="14" fill="none" stroke="rgba(142,157,255,0.3)" stroke-width="1.5"/>
+
+  <!-- ≈ symbol -->
+  <g filter="url(#glow)" fill="url(#sym)">
+    <!-- Top wave -->
+    <path d="M15 24 C19 20, 25 20, 29 24 C33 28, 39 28, 43 24 C45 22.5, 47 24, 47 24 L47 28 C43 32, 37 32, 33 28 C29 24, 23 24, 19 28 C17 29.5, 15 28, 15 28 Z"/>
+    <!-- Bottom wave -->
+    <path d="M15 36 C19 32, 25 32, 29 36 C33 40, 39 40, 43 36 C45 34.5, 47 36, 47 36 L47 40 C43 44, 37 44, 33 40 C29 36, 23 36, 19 40 C17 41.5, 15 40, 15 40 Z"/>
+  </g>
+</svg>
